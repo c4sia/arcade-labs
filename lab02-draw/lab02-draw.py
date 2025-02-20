@@ -39,6 +39,8 @@ def escribir_mensaje(mensaje: str, x: int, y: int, tamaño_letra: int) -> None:
     PRE: -
     """
     arcade.draw_text(mensaje, x, y, arcade.color.WHITE, tamaño_letra)
+
+
 def main() -> None:
     """
     OBJ: Iniciar el dibujo.
