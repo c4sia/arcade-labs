@@ -38,9 +38,14 @@ arcade.draw_arc_filled(315, 413, 20, 10, arcade.color.BLACK_OLIVE, 180, 360, 0)
 
 arcade.draw_lrtb_rectangle_filled(0, 800, 100, 0, arcade.color.DARK_MIDNIGHT_BLUE)
 
-arcade.draw_line(250, 100, 330, 100, arcade.color.COOL_GREY,6)
-arcade.draw_line(260, 94, 320, 94, arcade.color.COOL_GREY, 6)
-arcade.draw_line(270, 88, 310, 88, arcade.color.COOL_GREY, 6)
+def sombra_luna(x: int, y:int, grosor: int) -> None:
+    """
+    OBJ: Dibujar la sombra de una luna.
+    PRE: -
+    """
+    arcade.draw_line(x, y, x+80, y, arcade.color.COOL_GREY,grosor)
+    arcade.draw_line(x+10, y-6, x+70, y-6, arcade.color.COOL_GREY, grosor)
+    arcade.draw_line(x+20, y-12, x+60, y-12, arcade.color.COOL_GREY, grosor)
 
 def escribir_mensaje(mensaje: str, x: int, y: int, tamaño_letra: int) -> None:
     """
@@ -50,6 +55,6 @@ def escribir_mensaje(mensaje: str, x: int, y: int, tamaño_letra: int) -> None:
     arcade.draw_text(mensaje, x, y, arcade.color.WHITE, tamaño_letra)
 
 escribir_mensaje("leon atilano gonzalez sotos", 40, 50, 80)
-
+sombra_luna(250, 100, 6)
 arcade.finish_render()
 arcade.run()
